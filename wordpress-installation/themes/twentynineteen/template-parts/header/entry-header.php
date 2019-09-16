@@ -42,5 +42,5 @@ $discussion = ! is_page() && twentynineteen_can_show_post_thumbnail() ? twentyni
 			'</span>'
 		);
 	?>
-</div><!-- .entry-meta -->
+</div><!-- .meta-info -->
 <?php endif; ?>
