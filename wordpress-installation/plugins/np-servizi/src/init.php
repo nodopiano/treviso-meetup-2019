@@ -84,15 +84,6 @@ function np_servizi_cgb_block_assets() { // phpcs:ignore
 			'editor_style'  => 'np_servizi-cgb-block-editor-css',
 		)
 	);
-
-	// Registrazione CDN di FontAwesome
-	wp_register_script(
-		'font-awesome',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/fontawesome.min.js',
-		[],
-		null,
-		true
-	);
 }
 
 // Hook: Block assets.
