@@ -1,0 +1,45 @@
+html, body {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+}
+
+.services.invert .service__inner {
+    background-color: #907a00;
+    color: #ffffff;
+}
+
+.services .services__inner {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.services .service {
+    color: #907a00;
+    padding: .5rem;
+}
+
+.services .service__inner {
+    align-items: center;
+    border: 1px solid #907a00;
+    display: flex;
+    flex-flow: row wrap;
+    height: 180px;
+    justify-content: center;
+    padding: 1rem;
+    width: 180px;
+}
+
+.services .service__icon {
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 0 0 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.services .service__title {
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+}
