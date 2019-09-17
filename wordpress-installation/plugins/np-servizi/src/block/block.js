@@ -146,7 +146,7 @@ registerBlockType('nodopiano/servizi', {
 	 */
   save: props => {
     return (
-      <div className={classnames('services__wrapper', props.className)}>
+      <div className={classnames('services', props.className)}>
         <div className="services__inner">
           {props.attributes.selectedServices.map(service => (
             <div className="service">
