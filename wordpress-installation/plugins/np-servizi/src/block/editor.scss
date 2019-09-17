@@ -13,3 +13,37 @@
   max-width: 740px;
   padding: 2rem;
 }
+
+.services-selector {
+	&__help {
+		font-size: 16px;
+		font-style: italic;
+		padding: 8px 16px;
+	}
+
+	.service {
+		border: 2px solid #718096;
+		margin: 0 12px;
+		padding: 8px 12px;
+		border-radius: 8px;
+		color: #718096;
+		background: #f7fafc;
+		font-family: sans-serif;
+		font-size: 16px;
+		cursor: pointer;
+		outline: none;
+		transition: all 200ms;
+		transition-property: border background color;
+
+		&--selected {
+			border: 2px solid #3182ce;
+			color: #3182ce;
+			background: #ebf8ff;
+		}
+
+		&:hover {
+			border: 2px solid #2d3748;
+			color: #2d3748;
+		}
+	}
+}
