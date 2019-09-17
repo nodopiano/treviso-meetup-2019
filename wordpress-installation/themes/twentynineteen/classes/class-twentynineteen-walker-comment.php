@@ -33,9 +33,10 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
 						<?php
-						$comment_author_url = get_comment_author_url( $comment );
-						$comment_author     = get_comment_author( $comment );
-						$avatar             = get_avatar( $comment, $args['avatar_size'] );
+						$comment_author_link = get_comment_author_link( $comment );
+						$comment_author_url  = get_comment_author_url( $comment );
+						$comment_author      = get_comment_author( $comment );
+						$avatar              = get_avatar( $comment, $args['avatar_size'] );
 						if ( 0 != $args['avatar_size'] ) {
 							if ( empty( $comment_author_url ) ) {
 								echo $avatar;
@@ -70,7 +71,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 									),
 								)
 							),
-							'<b class="fn">' . $comment_author . '</b>'
+							'<b class="fn">' . get_comment_author_link( $comment ) . '</b>'
 						);
 
 						if ( ! empty( $comment_author_url ) ) {

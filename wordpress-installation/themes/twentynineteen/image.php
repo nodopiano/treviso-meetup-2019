@@ -78,7 +78,7 @@ get_header();
 						<?php twentynineteen_entry_footer(); ?>
 
 					</footer><!-- .entry-footer -->
-				</article><!-- #post-<?php the_ID(); ?> -->
+				</article><!-- #post-## -->
 
 				<?php
 				// Parent post navigation.

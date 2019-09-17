@@ -52,4 +52,4 @@
 		<?php get_template_part( 'template-parts/post/author', 'bio' ); ?>
 	<?php endif; ?>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-${ID} -->

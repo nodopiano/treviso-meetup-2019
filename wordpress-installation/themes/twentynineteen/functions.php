@@ -321,3 +321,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+
+wp_enqueue_style('fontawesome-5', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css', '', '5.10.2');
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/acf-gutenberg.php';

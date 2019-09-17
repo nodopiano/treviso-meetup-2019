@@ -20,7 +20,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentynineteen' ); ?></a>
 
@@ -28,7 +27,7 @@
 
 			<div class="site-branding-container">
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-			</div><!-- .site-branding-container -->
+			</div><!-- .layout-wrap -->
 
 			<?php if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) : ?>
 				<div class="site-featured-image">
