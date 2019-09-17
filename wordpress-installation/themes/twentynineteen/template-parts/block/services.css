@@ -8,6 +8,15 @@ html, body {
     color: #ffffff;
 }
 
+.services.is-style-rounded .service__inner {
+    border-radius: .5rem;
+}
+
+.services.is-style-circle .service__inner {
+    border-radius: 100%;
+    padding: 1.5rem;
+}
+
 .services .services__inner {
     display: flex;
     flex-flow: row wrap;
@@ -42,4 +51,5 @@ html, body {
     font-size: 1rem;
     margin: 0;
     text-align: center;
+    word-break: break-word;
 }

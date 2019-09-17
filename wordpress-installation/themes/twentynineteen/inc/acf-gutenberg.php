@@ -1,9 +1,9 @@
 <?php
 function service_block_registration() {
 	
-	if( function_exists('acf_register_block') ) {
+	if( function_exists('acf_register_block_type') ) {
 		
-		acf_register_block(array(
+		acf_register_block_type(array(
 			'name'				=> 'services',
 			'title'				=> __('Services'),
 			'description'		=> __('A custom block to display services'),
@@ -11,27 +11,26 @@ function service_block_registration() {
 			'category'			=> 'common',
 			'icon'				=> 'wordpress', //dashicons: https://developer.wordpress.org/resource/dashicons
 			'keywords'			=> array( 'nodopiano' ),
+			'styles'			=> array(
+				array(
+					'name' => 'default',
+					'label' => __( 'Default' ),
+					'isDefault' => true
+				),
+				array(
+					'name' => 'rounded',
+					'label' => __( 'Rounded' )
+				),
+				array(
+					'name' => 'circle',
+					'label' => __( 'Circle' )
+				)
+			),
+			'enqueue_style' => get_template_directory_uri() . '/template-parts/block/services.css'
 		));
 	}
 }
 add_action('acf/init', 'service_block_registration');
-
-function treviso_meetup_block_category( $categories, $post ) {
-	return array_merge(
-		$categories,
-		array(
-			array(
-				'slug' => 'treviso-meetup',
-				'title' => __( 'Treviso Meetup', 'treviso-meetup' ),
-			),
-			array(
-				'slug' => 'nodopiano',
-				'title' => __( 'Nodopiano', 'nodopiano' ),
-			)
-		)
-	);
-}
-add_filter('block_categories', 'treviso_meetup_block_category', 10, 2);
 
 function services_render_callback( $block ) {
 
@@ -40,6 +39,20 @@ function services_render_callback( $block ) {
 	if( file_exists( get_theme_file_path("/template-parts/block/{$slug}.php") ) ) {
 		include( get_theme_file_path("/template-parts/block/{$slug}.php") );
 	}
+
 }
 
-wp_enqueue_style('services', get_template_directory_uri() . '/template-parts/block/services.css', 'fontawesome-5', '1.0.0');
+function treviso_meetup_block_category( $categories, $post ) {
+
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'treviso-meetup',
+				'title' => __( 'Treviso Meetup', 'treviso-meetup' ),
+			)
+		)
+	);
+
+}
+add_filter('block_categories', 'treviso_meetup_block_category', 10, 2);
