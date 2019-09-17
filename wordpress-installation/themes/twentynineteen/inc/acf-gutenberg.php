@@ -1,13 +1,13 @@
 <?php
 function service_block_registration() {
 	
-	if( function_exists('acf_register_block_type') ) {
+	if( function_exists('acf_register_block_type') ) { // https://www.advancedcustomfields.com/resources/acf_register_block_type
 		
 		acf_register_block_type(array(
 			'name'				=> 'services',
 			'title'				=> __('Services'),
 			'description'		=> __('A custom block to display services'),
-			'render_callback'	=> 'services_render_callback',
+			'render_callback'	=> 'block_render_callback',
 			'category'			=> 'common',
 			'icon'				=> 'wordpress', //dashicons: https://developer.wordpress.org/resource/dashicons
 			'keywords'			=> array( 'nodopiano' ),
@@ -32,7 +32,7 @@ function service_block_registration() {
 }
 add_action('acf/init', 'service_block_registration');
 
-function services_render_callback( $block ) {
+function block_render_callback( $block ) {
 
 	$slug = str_replace('acf/', '', $block['name']);
 	
