@@ -1,97 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>Treviso Meetup 2019</title>
+    <title>Treviso Meetup 2019</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/custom.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/custom.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section class="slide-1">
-					<div class="intro">
-						<h1 class="title"><b>GUTENBERG!</b></h1>
-						<h4 class="subtitle">Manuale pratico per non farsi travolgere</h4>
-					</div>
-					<div class="credits">
-						<img src="img/nodopiano_orizzontale.svg" width="300px" height="91" alt="Nodopiano"/>
-					</div>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="slide-1">
+          <div class="intro">
+            <h1 class="title"><b>GUTENBERG!</b></h1>
+            <h4 class="subtitle">Manuale pratico per non farsi travolgere</h4>
+          </div>
+          <div class="credits">
+            <img
+              src="img/nodopiano_orizzontale.svg"
+              width="300px"
+              height="91"
+              alt="Nodopiano"
+            />
+          </div>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
 						### Gutenberg
 						Il nuovo editor introdotto dalla versione 5.0 di WordPress
-					</textarea>
-				</section>
-				<section>
-					<h3 class="section__title">Expectations</h3>
-					<div class="expectations"></div>
-					<ul>
-						<li class="fragment">Ora posso creare contenuti facilmente con l'utilizzo dei blocchi standard!</li>
-						<li class="fragment">Ora posso riorganizzare i contenuti semplicemente trascinandoli!</li>
-						<li class="fragment">Ora posso combinare tra loro i blocchi!</li>
-						<li class="fragment">Ora posso creare blocchi custom! (?)</li>
-					</ul>
-				</section>
-				<section>
-					<img class="daenerys" src="/img/daenerys.png" width="696" height="694" alt="daenerys"/>
-				</section>
-				<section>
-					<h3 class="section__title">Reality</h3>
-					<div class="reality"></div>
-					<ul>
-						<li class="fragment">Tonnellate di JavaScript</li>
-						<li class="fragment">Conoscenze di React.js, JSX, ES6, webpack</li>
-						<li class="fragment">Tempi di sviluppo da non sottovalutare</li>
-						<span class="fragment">.</span><span class="fragment">.</span><span class="fragment">.</span>
-						<li class="fragment">È un plugin!1!11!!</li>
-					</ul>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
+					</textarea
+          >
+        </section>
+        <section
+          data-background-image="/img/surf.jpg"
+          data-background-opacity="0.4"
+        >
+          <h3 class="section__title">Expectations</h3>
+          <ul>
+            <li class="fragment">
+              Ora posso creare contenuti facilmente con l'utilizzo dei blocchi
+              standard!
+            </li>
+            <li class="fragment">
+              Ora posso riorganizzare i contenuti semplicemente trascinandoli!
+            </li>
+            <li class="fragment">Ora posso combinare tra loro i blocchi!</li>
+            <li class="fragment">Ora posso creare blocchi custom! (?)</li>
+          </ul>
+        </section>
+        <section
+          data-background-image="/img/daenerys.png"
+          data-background-size="cover"
+        ></section>
+        <section
+          data-background-image="/img/reality.jpg"
+          data-background-opacity="0.3"
+        >
+          <h3 class="section__title">Reality</h3>
+          <ul>
+            <li class="fragment">Tonnellate di JavaScript</li>
+            <li class="fragment">Conoscenze di React.js, JSX, ES6, webpack</li>
+            <li class="fragment">Tempi di sviluppo da non sottovalutare</li>
+            <li class="fragment">È un plugin!1!11!!</li>
+          </ul>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
 						### Caso studio
 						[Services Block](http://trevisomeetup.localhost/services)
-					</textarea>
-				</section>
-				<section>
-					<h3>Creiamo un blocco di Gutenberg!</h3>
-					<p>Possiamo scegliere tra due strade</p>
-					<ul>
-						<li class="fragment">Documentazione ufficiale di Wordpress</li>
-						<li class="fragment">Usare un boilerplate: <b>create-guten-block</b></li>
-					</ul>
-				</section>
-				<section>
-					<h3>Perché non usare la documentazione ufficiale?</h3>
-					<p class="fragment">Per quanto ben spiegata e fornita, bisogna configurare <b>tutto manualmente</b></p>
-					<p class="fragment">E noi siamo pigri</p>
-				</section>
-				<section>
-						<h3>create-guten-block!</h3>
-						<h6>
-							<a href="https://github.com/ahmadawais/create-guten-block" target="_blank">https://github.com/ahmadawais/create-guten-block</a>
-						</h6>
-						<p class="fragment pt-16"><b>Disclamer:</b> Node required</p>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
+					</textarea
+          >
+        </section>
+        <section>
+          <h3>Creiamo un blocco di Gutenberg!</h3>
+          <p>Possiamo scegliere tra due strade</p>
+          <ul>
+            <li class="fragment">Documentazione ufficiale di Wordpress</li>
+            <li class="fragment">
+              Usare un boilerplate: <b>create-guten-block</b>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Perché non usare la documentazione ufficiale?</h3>
+          <p class="fragment">
+            Per quanto ben spiegata e fornita, bisogna configurare
+            <b>tutto manualmente</b>
+          </p>
+          <p class="fragment">E noi siamo pigri</p>
+        </section>
+        <section>
+          <h3>create-guten-block!</h3>
+          <h6>
+            <a
+              href="https://github.com/ahmadawais/create-guten-block"
+              target="_blank"
+              >https://github.com/ahmadawais/create-guten-block</a
+            >
+          </h6>
+          <p class="fragment pt-16"><b>Disclamer:</b> Node required</p>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
 						### create-guten-block!
 						###### [https://github.com/ahmadawais/create-guten-block](https://github.com/ahmadawais/create-guten-block)
 
@@ -102,36 +132,51 @@
 
 						npm start
 						```
-					</textarea>
-				</section>
-				<section>
-						<h3>create-guten-block!</h3>
-						<h6>
-							<a href="https://github.com/ahmadawais/create-guten-block" target="_blank">https://github.com/ahmadawais/create-guten-block</a>
-						</h6>
-						<p class="pt-16">Viene creato il file <b>block.js</b>, l'unico file che dobbiamo modificare.</p>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-						### Facile, no?
-						![](/img/grinch.gif)
-					</textarea>
-				</section>
-				<section>
-					<h3>Gutenberg in tre parti</h3>
-					<ul>
-						<li class="fragment">La configurazione del blocco e i suoi attributi</li>
-						<li class="fragment">La funzione <b>edit</b></li>
-						<li class="fragment">La funzione <b>save</b></li>
-					</ul>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
+					</textarea
+          >
+        </section>
+        <section>
+          <h3>create-guten-block!</h3>
+          <h6>
+            <a
+              href="https://github.com/ahmadawais/create-guten-block"
+              target="_blank"
+              >https://github.com/ahmadawais/create-guten-block</a
+            >
+          </h6>
+          <p class="pt-16">
+            Viene creato il file <b>block.js</b>, l'unico file che dobbiamo
+            modificare.
+          </p>
+        </section>
+        <section data-markdown data-background-image="/img/grinch.gif">
+          ### Facile, no?
+        </section>
+        <section>
+          <h3>Gutenberg in tre parti</h3>
+          <ul>
+            <li class="fragment">
+              La configurazione del blocco e i suoi attributi
+            </li>
+            <li class="fragment">La funzione <b>edit</b></li>
+            <li class="fragment">La funzione <b>save</b></li>
+          </ul>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
 						### Un po' di codice!
-					</textarea>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
+					</textarea
+          >
+        </section>
+        <section
+          data-background-image="https://media.giphy.com/media/qUIm5wu6LAAog/giphy.gif"
+        >
+          <h3 class="section__title">
+            Ma non c'è un modo un po' più semplice?
+          </h3>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
 						### acf_register_block_type
 						###### [ACF - Documentation](https://www.advancedcustomfields.com/resources/acf_register_block_type)
 
@@ -152,35 +197,41 @@
 							}
 						}
 						```
-					</textarea>
-				</section>
-				<section class="slide-last">
-					<h1>Grazie!</h1>
-					<h4>Domande?</h4>
-					<div class="credits">
-						<img src="/img/nodopiano_orizzontale.svg" width="300px" height="91" alt="Nodopiano"/>
-					</div>
-				</section>
-			</div>
-		</div>
+					</textarea
+          >
+        </section>
+        <section class="slide-last">
+          <h1>Grazie!</h1>
+          <h4>Domande?</h4>
+          <div class="credits">
+            <img
+              src="/img/nodopiano_orizzontale.svg"
+              width="300px"
+              height="91"
+              alt="Nodopiano"
+            />
+          </div>
+        </section>
+      </div>
+    </div>
 
-		<script src="js/reveal.js"></script>
+    <script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				history: true,
-				//parallaxBackgroundImage: '../../img/surf.jpg',
-				//parallaxBackgroundSize: '3840px',
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        history: true,
+        //parallaxBackgroundImage: '../../img/surf.jpg',
+        //parallaxBackgroundSize: '3840px',
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true }
+        ]
+      });
+    </script>
+  </body>
 </html>
