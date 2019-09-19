@@ -1,69 +1,59 @@
-# Kayak
-Kayak is a wrapper around docker-compose, based on Vessel. By default, the following containers are started: Apache/php7.0, MariaDB, PhpMyAdmin. The /wp_html directory is the web root which is mapped to the apache/php container.
-A Dockerfile is included for apache2/wordpress (Dockerfile). This adds a few extra things to the wordpress image, such as wp-cli.
-You can start the containers with:
-```
-kayak start
-```
+# Gutenberg!
+## Manuale pratico per non farsi travolgere
+Creare blocchi di gutenberg non è solo per Javascript Ninja, possiamo utilizzare le nostre conoscenze di WordPress per creare blocchi personalizzati in pochissimo tempo!
 
-## How to install WordPress
-Before installing WordPress you need to create a .env file, kayak do it for you with 
-```
-kayak init
-```
-just edit the .env file and then install WordPress with:
-```
-kayak install
-```
+Potete trovare la nostra presentazione [qui](https://www.nodopiano.it/) (coming soon!).
 
-## Wordpress URL and Ports
+## Come usare il repository
+Qui è contenuto tutto il codice che abbiamo mostrato durante la presentazione, e molto di più!
 
-Kayak binds to port 80 and 3306 on your machine, so you can simply go to http://localhost in your browser. Please make sure you don't have other services running under those ports.
+Abbiamo incluso una installazione di WordPress completa, in modo tale che possiate testare a vostro piacimento tutte le configurazioni che abbiamo creato
 
-## WP-Cli
+### Requisiti
+* Docker! We love Docker.
+* Docker Compose! We also love Docker Compose.
+* Node per lo sviluppo del plugin dei servizi
 
-WP-CLI is a set of command-line tools for managing WordPress installations. You can update plugins, configure multisite installs and much more, without using a web browser.
-To use wp-cli just type:­
-```
-kayak wp  
+### Installazione
+L'ambiente di WordPress è stato creato tramite un nostro sistema di managment di container, [Kayak](https://github.com/nodopiano/kayak).
+
+Una volta scaricato il repository, eseguite il comando:
+```sh
+./kayak install
 ```
 
-## Wordmove
+Kayak installerà per voi WordPress e lo renderà disponibile all'indirizzo [trevisomeetup.localhost](http://trevisomeetup.localhost/).
 
-Kayak comes with Wordmove available in a separate container. In this way, you do not need to install Ruby nor Wordmove on your local machine.
+Fatto!
 
-**Attention:** in order to be able to use Wordmove with Kayak, you **do need** to:
+### Giochiamo con WordPress
+Potete accere al [backend](http://trevisomeetup.localhost/wp-admin) con nome utente `nodopiano` e password `nodopiano`.
 
-1. Specify the `MOVEFILE_PATH` variable inside your `.env` file. It should point to the *directory* in which your `movefile.yml` file is present.
+Da qui potete aggiungere plugin, cambiare i temi e modificare tutto ciò che volete.
 
-2. Start creating your movefile from `movefile.example.yml`, as it comes configured for Wordmove to work with variables specified in `.env` file. You may modify the `sql_adapter` to either one of your choice, but `wpcli` should work fine in most cases and it's already configured inside the Wordmove container.
+Vi serve guardare la configurazione del DB? Nessun problema, un container di PHPMyAdmin è già pronto per voi! Collegatevi all'indirizzo [localhost:8181](http://localhost:8181/) e collegatevi a MySQL con nome utente `root` e password `nodopiano`.
 
-To use Wordmove, simply run:
-```bash
-kayak wordmove [your wordmove parameters]
+Kayak prepara le cartelle `themes`, `plugins` e `uploads` all'interno di `wordpress-installation`.
+
+Se dovessero esserci problemi con l'edit di file e cartelle all'interno del progetto, eseguite semplicemente:
+```sh
+sudo chown -R $USER:$USER wordpress-installation
 ```
 
-Take a look at [Welaika's Wordmove project here](https://github.com/welaika/wordmove).
+#### Il plugin dei servizi
+Il plugin dei servizi scritto in React si trova all'interno di `wordpress-installation/plugins/np-servizi`.
 
-**TIP**: you can configure your movefile to accept environment variables described in `.env` using the syntax:
-```
-<%= ENV['YOUR_ENV_VAR_NAME'] %>
-```
-
-## Database dump
-you can dump the database anytime you want with a line: 
-```
-kayak dump > dump.sql
+Cominciate a sviluppare entrando nella cartella e digitando:
+```sh
+# Installiamo le dipendenze
+npm install
+# Lanciamo la compilazione in tempo reale
+npm develop
 ```
 
-## Share your local WordPress with others
-Sometimes you want to share your local WordPress install with a collegue or a client to let them see what you're working on. Meet kayak serve.
-```
-kayak serve
-```
-kayak uses ngrok.io to create a tunnel and a WordPress plugin (relative-url) to make everything work. 
-When you stop ngrok (CTRL-C), kayak deactivates relative-url plugin to let you work as usual.
+Fate riferimento al [repository originale di create-guten-block](https://github.com/ahmadawais/create-guten-block) per cominciare a sviluppare i vostri blocchi preferiti.
 
-## Credits
-Kayak is heavily based on [Chris Fidao](https://github.com/fideloper) [Vessel](https://github.com/shipping-docker/vessel)
+#### Il tema
+Il tema che abbiamo usato si trova in `wordpress-installation/themes/treviso-meetup-2019`.
 
+È un fork semplicissimo di TwentyNineteen.
