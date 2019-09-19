@@ -211,9 +211,9 @@ body {
 .reveal a {
   color: #51483D;
   text-decoration: none;
-  -webkit-transition: color .15s ease;
-  -moz-transition: color .15s ease;
-  transition: color .15s ease; }
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease; }
 
 .reveal a:hover {
   color: #8b7c69;
@@ -238,9 +238,9 @@ body {
   box-shadow: none; }
 
 .reveal a img {
-  -webkit-transition: all .15s linear;
-  -moz-transition: all .15s linear;
-  transition: all .15s linear; }
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
@@ -277,7 +277,7 @@ body {
   background: url(../../../img/surf.jpg) center center/cover; }
 
 .reveal {
-  background-color: rgba(0, 146, 190, 0.85); }
+  background-color: rgba(7, 22, 39, 0.85); }
   .reveal h1,
   .reveal h2,
   .reveal h3,
@@ -286,14 +286,16 @@ body {
   .reveal h6 {
     display: block;
     width: 100%; }
-  .reveal .slide-1, .reveal .slide-last {
+  .reveal .slide-1,
+  .reveal .slide-last {
     align-content: center;
     align-items: center;
     display: flex !important;
     flex-flow: row wrap;
     height: 100%;
     justify-content: center; }
-    .reveal .slide-1 .intro, .reveal .slide-last .intro {
+    .reveal .slide-1 .intro,
+    .reveal .slide-last .intro {
       text-align: right; }
   .reveal .title {
     font-size: 6rem;
