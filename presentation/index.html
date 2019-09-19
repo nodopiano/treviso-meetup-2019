@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Treviso Meetup 2019</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="slide-1">
+					<div class="intro">
+						<h1 class="title"><b>GUTENBERG!</b></h1>
+						<h4 class="subtitle">Manuale pratico per non farsi travolgere</h4>
+					</div>
+					<div class="credits">
+						<img src="img/nodopiano_orizzontale.svg" width="300px" height="91" alt="Nodopiano"/>
+					</div>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Gutenberg
+						Il nuovo editor introdotto dalla versione 5.0 di WordPress
+					</textarea>
+				</section>
+				<section>
+					<h3 class="section__title">Expectations</h3>
+					<div class="expectations"></div>
+					<ul>
+						<li class="fragment">Ora posso creare contenuti facilmente con l'utilizzo dei blocchi standard!</li>
+						<li class="fragment">Ora posso riorganizzare i contenuti semplicemente trascinandoli!</li>
+						<li class="fragment">Ora posso combinare tra loro i blocchi!</li>
+						<li class="fragment">Ora posso creare blocchi custom! (?)</li>
+					</ul>
+				</section>
+				<section>
+					<img class="daenerys" src="/img/daenerys.png" width="696" height="694" alt="daenerys"/>
+				</section>
+				<section>
+					<h3 class="section__title">Reality</h3>
+					<div class="reality"></div>
+					<ul>
+						<li class="fragment">Tonnellate di JavaScript</li>
+						<li class="fragment">Infarinatura di React.js, webpack</li>
+						<li class="fragment">Un paio d'ore a blocco</li>
+						<li class="fragment">È un plugin!1!11!!</li>
+					</ul>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Caso studio
+						[Services Block](http://trevisomeetup.localhost/services)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### create-guten-block
+						###### [https://github.com/ahmadawais/create-guten-block](https://github.com/ahmadawais/create-guten-block)
+
+						```
+						npx create-guten-block my-block
+
+						cd my-block
+
+						npm start
+						```
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						![](/img/grinch.gif )
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### acf_register_block_type
+						###### [ACF - Documentation](https://www.advancedcustomfields.com/resources/acf_register_block_type)
+
+						```php
+						add_action('acf/init', 'my_gutenberg_block');
+						function my_gutenberg_block() {
+							// check function exists
+							if( function_exists('acf_register_block_type') ) {
+								acf_register_block_type(array(
+									'name'				=> 'testimonial',
+									'title'				=> __('Testimonial'),
+									'description'		=> __('A custom testimonial block.'),
+									'render_callback'	=> 'my_gutenberg_block_render_callback',
+									'category'			=> 'common',
+									'icon'				=> 'wordpress',
+									'keywords'			=> array( 'testimonial' ),
+								));
+							}
+						}
+						```
+					</textarea>
+				</section>
+				<section class="slide-last">
+					<h1>Grazie!</h1>
+					<h4>Domande?</h4>
+					<div class="credits">
+						<img src="/img/nodopiano_orizzontale.svg" width="300px" height="91" alt="Nodopiano"/>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				history: true,
+				//parallaxBackgroundImage: '../../img/surf.jpg',
+				//parallaxBackgroundSize: '3840px',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

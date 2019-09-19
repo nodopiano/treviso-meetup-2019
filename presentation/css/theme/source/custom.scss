@@ -1,0 +1,35 @@
+/**
+ * Custom theme for reveal.js.
+ *
+ * Copyright (C) 2019 Nodopiano, https://www.nodopiano.it
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Manjari);
+@import url(https://fonts.googleapis.com/css?family=Rubik);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: rgba(255, 255, 255, .75);
+
+$mainFont: 'Manjari', sans-serif;
+//$mainFontSize: 16px;
+$linkColor: #80d7ff;
+$linkColorHover: lighten( $linkColor, 20% );
+$headingFont: 'Rubik', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$selectionBackgroundColor: #0092be;
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
