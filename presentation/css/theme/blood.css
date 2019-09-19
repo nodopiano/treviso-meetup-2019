@@ -356,6 +356,9 @@ body {
     .reveal section code * {
       color: #a23; }
 
+.pt-16 {
+  padding-top: 4rem; }
+
 .reveal p {
   font-weight: 300;
   text-shadow: 1px 1px #222; }
