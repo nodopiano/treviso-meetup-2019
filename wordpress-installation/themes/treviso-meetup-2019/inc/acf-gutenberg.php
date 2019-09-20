@@ -1,7 +1,8 @@
 <?php
+/* La funzione che definisce il blocco */
 function service_block_registration() {
 	
-	if( function_exists('acf_register_block_type') ) { // https://www.advancedcustomfields.com/resources/acf_register_block_type
+	if( function_exists('acf_register_block_type') ) {
 		
 		acf_register_block_type(array(
 			'name'				=> 'services',
@@ -32,6 +33,7 @@ function service_block_registration() {
 }
 add_action('acf/init', 'service_block_registration');
 
+/* La funzione che definisce il template blocco - Render function */
 function block_render_callback( $block ) {
 
 	$slug = str_replace('acf/', '', $block['name']);
@@ -42,6 +44,7 @@ function block_render_callback( $block ) {
 
 }
 
+/* La funzione per definire nuove categorie */
 function treviso_meetup_block_category( $categories, $post ) {
 
 	return array_merge(
