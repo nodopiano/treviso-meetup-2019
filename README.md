@@ -57,3 +57,10 @@ Fate riferimento al [repository originale di create-guten-block](https://github.
 Il tema che abbiamo usato si trova in `wordpress-installation/themes/treviso-meetup-2019`.
 
 È un fork semplicissimo di TwentyNineteen.
+
+#### Gutenberg + Advanced Custom Fields (ACF)
+All'interno della cartella `/inc` potete trovare il file `acf-gutenberg.php` che contiene le funzioni necessarie a registrare il blocco di Gutenberg attraverso la funzione `acf_register_block_type` messa a disposizione da ACF dalla versione 5.8, questo file è incluso nel `functions.php` del tema in uso.
+
+All'interno della cartella `/blocks` il file `services.php` descrive la struttura del blocco di Gutenberg che intendiamo includere.
+
+All'interno della cartella `/acf-json` è presente un file `JSON` che raccoglie i field di ACF impiegati nel progetto.
