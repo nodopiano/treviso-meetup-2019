@@ -2,7 +2,7 @@
 ## Manuale pratico per non farsi travolgere
 Creare blocchi di gutenberg non è solo per Javascript Ninja, possiamo utilizzare le nostre conoscenze di WordPress per creare blocchi personalizzati in pochissimo tempo!
 
-Potete trovare la nostra presentazione [qui](https://www.nodopiano.it/) (coming soon!).
+Potete trovare la nostra presentazione [qui](https://treviso-meetup-gutenberg.netlify.com) .
 
 ## Come usare il repository
 Qui è contenuto tutto il codice che abbiamo mostrato durante la presentazione, e molto di più!
